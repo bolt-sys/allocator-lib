@@ -3,7 +3,7 @@
 #define SLAB_ALLOCATORS 48 // 256 TiB in theory, although overkill.
 
 SLAB_CACHE*    g_Allocators[SLAB_ALLOCATORS];
-static BOOLEAN g_Heap_initialized = FALSE;
+STATIC BOOLEAN g_Heap_initialized = FALSE;
 
 /**
  * @brief Initialize the Heap
