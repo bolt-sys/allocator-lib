@@ -13,13 +13,19 @@ if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
             source/*.h
             executable/*.c
             executable/*.h
+            main.c
     )
-
-    add_executable(AllocatorLib main.c)
+    add_executable(AllocatorLib ${SOURCES})
     target_sources(
             AllocatorLib
             PRIVATE
             ${SOURCES}
+    )
+    target_include_directories(
+            AllocatorLib
+            PRIVATE
+            executable
+            include
     )
     target_compile_options(
             AllocatorLib
